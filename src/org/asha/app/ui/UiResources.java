@@ -2,7 +2,6 @@
 package org.asha.app.ui;
 
 import android.content.Context;
-import android.graphics.Color;
 
 import java.util.Random;
 
@@ -26,9 +25,7 @@ public class UiResources {
 
     private static Random sRandom = new Random();
 
-    public static int[] sColorList = {
-            sBlueColor, sGrayColor, sWhiteColor, sOrangeColor, sRedColor, sYellowColor
-    };
+    public static int[] sColorList;
 
     public static void init(Context context) {
         if (mInitialized) {
@@ -40,6 +37,10 @@ public class UiResources {
         sOrangeColor = context.getResources().getColor(R.color.orange);
         sRedColor = context.getResources().getColor(R.color.red);
         sYellowColor = context.getResources().getColor(R.color.yellow);
+        sColorList = new int[] {
+                sBlueColor, sGrayColor, sWhiteColor, sOrangeColor, sRedColor, sYellowColor
+        };
+        mInitialized = true;
     }
 
     public static int pickRandomColor() {

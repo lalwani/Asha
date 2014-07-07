@@ -60,12 +60,13 @@ public class EventsFragment extends Fragment {
                 holder = new ViewHolder();
                 holder.eventLocationTextView = (TextView)view.findViewById(R.id.event_location);
                 holder.eventTitleTextView = (TextView)view.findViewById(R.id.event_title);
+                holder.color = UiResources.pickRandomColor();
             }
 
             Event event = getItem(position);
             holder.eventLocationTextView.setText(event.getEventLocation());
             holder.eventTitleTextView.setText(event.getEventTitle());
-            view.setBackgroundColor(UiResources.pickRandomColor());
+            view.setBackgroundColor(holder.color);
             view.setTag(holder);
 
             return view;
@@ -78,8 +79,7 @@ public class EventsFragment extends Fragment {
 
         @Override
         public Event getItem(int position) {
-            // TODO Auto-generated method stub
-            return null;
+            return mEventList.get(position);
         }
 
         @Override
@@ -89,7 +89,7 @@ public class EventsFragment extends Fragment {
 
         class ViewHolder {
             public TextView eventTitleTextView;
-
+            public int color;
             public TextView eventLocationTextView;
         }
     };

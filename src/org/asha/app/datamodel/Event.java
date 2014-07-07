@@ -50,6 +50,7 @@ public class Event implements Parcelable {
         event.setEventDescription("Event Description" + index);
         event.setEventLocation("Event Location" + index);
         event.setEventTime("Sun, July 6th 2014");
+        event.setEventTitle("Event Title" + index);
         return event;
     }
 
